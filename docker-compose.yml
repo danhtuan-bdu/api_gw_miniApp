@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  apigateway:
+    image: apigateway
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8050:5001
+    environment:
+      - BASIC_AUTH_USERNAME=ioc_bdu_api
+      - BASIC_AUTH_PASSWORD=*Bdu@apigw2024
+      - DB_HOST=192.168.69.26
+      - DB_USER=root
+      - DB_PASSWORD=*Bdu@mysqlapi2024
+      - DB_NAME=IOC_BDU_ODP
